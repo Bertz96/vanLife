@@ -3,8 +3,13 @@ import { requireAuth } from '../../utils/login';
 import { getHostVans } from '../../utils/api';
 import { Suspense } from 'react';
 import { BsStarFill } from 'react-icons/bs';
+import { Van } from '../../types/vanType';
 
-export async function loader({request}){
+type Loader = {
+  request: Request
+}
+
+export async function loader({request} : Loader){
   await requireAuth(request)
   return defer({ listOfVans : getHostVans()})
 }
@@ -14,7 +19,7 @@ export default function Dashboard() {
   
   const vanData = useLoaderData()
   
-  function renderListOfVans(vans){
+  function renderListOfVans(vans: Van[] ){
     const listOfVans = vans.map((van) => (
       <Link to={`${van.id}`} key={van.id}>
         <div

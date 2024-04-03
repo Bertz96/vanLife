@@ -2,13 +2,20 @@
 import { useLoaderData, useNavigation, Form, redirect, useActionData } from "react-router-dom";
 import { loginUser } from '../utils/api';
 
+type Loader = {
+  request: Request
+}
 
-export function loader({ request }) {
+type Action = {
+  request: Request
+}
+
+export function loader( {request} : Loader ) {
   const mensaje = new URL(request.url).searchParams.get('message')
   return mensaje
 }
 
-export async function action({request}) {
+export async function action({request} : Action) {
   const formData = await request.formData()
   
   const email = formData.get('email')
@@ -18,7 +25,7 @@ export async function action({request}) {
   const prevPath = new URL(request.url).searchParams.get('redirectTo') || '/host'
   console.log(prevPath)
     try{
-        const infoLogin = await loginUser({email, password})
+        const infoLogin = await loginUser({email, password })
         console.log(infoLogin)
         localStorage.setItem('loggedIn', 'true')
     } catch (err){
@@ -33,9 +40,10 @@ export async function action({request}) {
     return infoRedirect
     }
 
+
 export default function Login() {
-  const message = useLoaderData()
-  const actionMessage = useActionData()
+  const message = useLoaderData() as string
+  const actionMessage = useActionData()  as string
   const navigation = useNavigation()
 
 
@@ -67,7 +75,7 @@ export default function Login() {
           />
 
           <button
-            className=" mt-9  rounded-md bg-orangeButton py-2 text-center text-xl font-bold  text-white disabled:bg-gray-500 "
+            className=" mt-9 w-72 self-center  rounded-md bg-orangeButton py-2 text-center text-xl font-bold  text-white disabled:bg-gray-500 "
             disabled={navigation.state === "submitting"}
           >
             {navigation.state === "submitting" ? "Loggin in..." : "Login"}
