@@ -1,16 +1,17 @@
 import { useRouteError } from "react-router-dom";
 
-type LoginError = {
-  message : string ,
-  statusText : string,
-  status : number,
+
+type ErrorData = {
+  message: string;
+  status: number;
+  statusText: string;
 }
+
+
+
 export default function Error() {
-  const error = useRouteError();
-  console.log(error);
+  const error = useRouteError() as ErrorData;
 
-
-  // Customizar el error para que sea mas generico en caso de ser necesario
 
   return (
     <>

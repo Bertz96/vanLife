@@ -1,33 +1,20 @@
 import { Link, useLoaderData, useLocation } from "react-router-dom";
 import TypeBadge from "../../components/TypeBadge";
-import { VanType } from "../../types/vanType";
 import { getVan } from "../../utils/api";
-// import VanCard from "../../components/VanCard";
+import { Van } from '../../types/vanType';
 
-type Van = {
-  id: number;
-  imageUrl: string;
-  name: string;
-  price: number;
-  type: VanType;
-  description: string;
-};
 
-export async function loader({ params }) {
-  // console.log(params);
+// eslint-disable-next-line react-refresh/only-export-components
+export async function loader({ params } ) {
+  console.log(params.id)
   return getVan(params.id);
 }
 
 export default function VanDetail() {
-  const van = useLoaderData();
+  const van = useLoaderData() as Van
   const ubicacion = useLocation();
 
   //with useLocation we use the ability of the browser to maintain some kind of state based on where you are at the app (like the previous URL)
-
-  //  const search = location.state?.search || ""
-
-  console.log(van)
-
 
   const search = ubicacion.state?.search || "";
 

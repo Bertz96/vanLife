@@ -1,11 +1,13 @@
 import { ReactNode } from "react";
+// import { Van } from '../types/vanType';
+
+// type TypeOfVan = Pick<Van, 'type'>
 
 type Props = {
-  badge: VanType;
+  badge: string;
   children: ReactNode;
 };
 
-type VanType = "simple" | "rugged" | "luxury";
 
 export default function TypeBadge({ badge, children }: Props) {
   return (

@@ -9,15 +9,15 @@ import TypeBadge from "../../components/TypeBadge";
 import { getVan } from "../../utils/api";
 import { requireAuth } from "../../utils/login";
 
-export async function loader({ params, request }) {
-  // console.log(params);
+
+export async function loader({ params, request } ) {
   await requireAuth(request);
   return getVan(params.id);
 }
 
 export default function HostVanDetail() {
 
-  const infoVan = useLoaderData();
+  const infoVan = useLoaderData() as Van
 
   return (
     <section className="py-2 h-screen">

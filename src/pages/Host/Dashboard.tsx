@@ -5,11 +5,8 @@ import { Suspense } from 'react';
 import { BsStarFill } from 'react-icons/bs';
 import { Van } from '../../types/vanType';
 
-type Loader = {
-  request: Request
-}
 
-export async function loader({request} : Loader){
+export async function loader({request} ){
   await requireAuth(request)
   return defer({ listOfVans : getHostVans()})
 }
@@ -21,7 +18,7 @@ export default function Dashboard() {
   
   function renderListOfVans(vans: Van[] ){
     const listOfVans = vans.map((van) => (
-      <Link to={`${van.id}`} key={van.id}>
+      <Link to={`vans/${van.id}`} key={van.id}>
         <div
           key={van.id}
           className="mb-6 flex  gap-4 rounded-lg bg-white p-6"
@@ -69,8 +66,7 @@ export default function Dashboard() {
         <p>Details</p>
   
       </section>
-
-      {/* agregar links */}
+      
 
       <section>
         <div className=' flex justify-between px-6 py-8'>

@@ -3,13 +3,13 @@ export type Van = {
     imageUrl?: string;
     name?: string;
     price?: number;
-    type?: VanType;
+    type: string;
     description?: string;
   };
 
 export type ContextType = { infoVan: Van | null };
 
-export type VanType = "simple" | "rugged" | "luxury";
+// export type VanType = "simple" | "rugged" | "luxury";
 
 export type LoginFormData = { email: string, password: string }
 

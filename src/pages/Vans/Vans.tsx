@@ -1,8 +1,8 @@
-import { Van } from "../../types/typeFilter";
 import { Link, useLoaderData, useSearchParams, defer, Await } from "react-router-dom";
 import { getVans } from "../../utils/api";
 import { Suspense } from 'react';
 import { Oval } from 'react-loader-spinner';
+import { Van } from '../../types/vanType';
 
 export function loader() {
   return defer({ allVans : getVans()});
@@ -11,7 +11,7 @@ export function loader() {
 export default function Vans() {
   const [searchParams, setSearchParams] = useSearchParams();
   const vansData = useLoaderData();
-  
+    
   const typeFilter = searchParams.get("type");
 
   function handleFilterChange(key: string, value: string | null) {
@@ -27,7 +27,7 @@ export default function Vans() {
 
   
 
-  function renderAllvans(vans){
+  function renderAllvans(vans : Van[]){
 
       const displayedVans = typeFilter
         ? vans.filter((van) => van.type === typeFilter)
@@ -96,11 +96,6 @@ export default function Vans() {
   <div className="mb-8 mt-10 grid grid-cols-6 gap-11">{listOfVans}{listOfVans}{listOfVans}{listOfVans}{listOfVans}{listOfVans}</div></>
     ) 
 }
-
-
-
-    //------- Agregar un spiner ----------
-
 
 
   return (

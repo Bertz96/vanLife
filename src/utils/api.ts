@@ -3,7 +3,7 @@
 
     const db = getFirestore(app)
 
-const vansCollectionRef = collection(db, 'vans')
+    const vansCollectionRef = collection(db, 'vans')
 
 
 //  All vans
@@ -20,7 +20,7 @@ export async function getVans(){
 }
 
 //  Single van
-    export async function getVan(id: string) : Promise<Van> {
+    export async function getVan(id: string) {
         const docRef = doc(db, 'vans', id)
         const vanSnapshot = await getDoc(docRef)
         return { 

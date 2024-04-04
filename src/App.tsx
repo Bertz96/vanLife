@@ -68,6 +68,7 @@ const router = createBrowserRouter(
           loader={async ({request}) => await requireAuth( request)}
         />
           <Route path="vans" loader={hostVanLoader} element={<HostVans />} />
+
           <Route
             path="vans/:id"
             loader={hostVanDetailLoader}
