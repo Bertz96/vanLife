@@ -39,14 +39,6 @@ export default function Header() {
           Vans
         </NavLink>
         <NavLink
-          to="register"
-          className={({ isActive }) =>
-            isActive ? " font-bold text-[#161616] underline" : "hover:underline"
-          }
-        >
-          Register
-        </NavLink>
-        <NavLink
           to="login"
           className={({ isActive }) =>
             isActive ? " font-bold text-[#161616] underline" : "hover:underline"
@@ -63,3 +55,4 @@ export default function Header() {
   );
 }
 
+  
