@@ -6,7 +6,7 @@ export default function About() {
       <img
         src="src\assets\images\about.png"
         alt="foto chico sobre van"
-        className=" mx-auto my-5"
+        className=" mx-auto my-5 rounded-md"
       />
 
       <div className="flex flex-col gap-3 px-12">

@@ -1,13 +1,12 @@
-import { Link, useLoaderData, useLocation } from "react-router-dom";
+import { Link, LoaderFunctionArgs, useLoaderData, useLocation } from "react-router-dom";
 import TypeBadge from "../../components/TypeBadge";
 import { getVan } from "../../utils/api";
 import { Van } from '../../types/vanType';
 
 
-// eslint-disable-next-line react-refresh/only-export-components
-export async function loader({ params } ) {
+export async function loader({ params } : LoaderFunctionArgs ) {
   console.log(params.id)
-  return getVan(params.id);
+  return getVan(params.id  as string);
 }
 
 export default function VanDetail() {

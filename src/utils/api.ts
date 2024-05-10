@@ -1,34 +1,18 @@
-    import { getFirestore, collection, getDocs, getDoc, doc, query, where } from "firebase/firestore/lite"
-    import { app } from '../config/firebase'
-
-    const db = getFirestore(app)
-
-    const vansCollectionRef = collection(db, 'vans')
-
+import { Van } from '../types/vanType'
 
 //  All vans
 export async function getVans(){
-
-    const vansQuerySnapshot = await getDocs(vansCollectionRef)
-    const dataArr = vansQuerySnapshot.docs.map( doc => ({
-        ...doc.data(),
-        id: doc.id
-    }))
+    const dataArr = await fetch('/vans').then(res => res.json())
 
     return dataArr
-
 }
 
 //  Single van
     export async function getVan(id: string) {
-        const docRef = doc(db, 'vans', id)
-        const vanSnapshot = await getDoc(docRef)
-        return { 
-            ...vanSnapshot.data(),
-            id : vanSnapshot.id
-        }
-
-    }
+        const singleVan = await fetch(`/vans/${id}`).then(res => res.json())
+        
+        return singleVan
+}
 
 // export async function getVan(id?: string) {
 //     const url = id ? `/api/vans/${id}` : "/api/vans"
@@ -45,14 +29,9 @@ export async function getVans(){
 // }
 
 export async function getHostVans() {
-    const q = query(vansCollectionRef, where('hostId', '==', '123'));
-    const vanCollectionSnapshot = await getDocs(q)
-    const dataArr = vanCollectionSnapshot.docs.map( doc => ({
-        ...doc.data(),
-        id: doc.id
-    }))
+    const hostVan : Van[] = await fetch('/host').then(res => res.json())
 
-    return dataArr
+    return hostVan
 }
 
 export type Credens ={
@@ -61,8 +40,11 @@ export type Credens ={
 }
 
 export async function loginUser({email, password} : Credens) {
-    const res = await fetch("/api/login",
-        { method: "post", body: JSON.stringify({email, password})  }
+    console.log(email, password)
+    const res = await fetch("/login",
+        { method: "post", body: JSON.stringify({email, password}), headers: {
+            "Content-Type": "application/json"
+        } }
     )
     const data = await res.json()
 

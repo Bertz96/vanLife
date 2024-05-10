@@ -8,9 +8,13 @@ export function loader() {
   return defer({ allVans : getVans()});
 }
 
+type VanLoader = {
+  allVans : Promise<Van[]>
+}
+
 export default function Vans() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const vansData = useLoaderData();
+  const vansData = useLoaderData() as VanLoader
     
   const typeFilter = searchParams.get("type");
 
@@ -93,7 +97,7 @@ export default function Vans() {
         </button>
     ) : null}
   </nav>
-  <div className="mb-8 mt-10 grid grid-cols-6 gap-11">{listOfVans}{listOfVans}{listOfVans}{listOfVans}{listOfVans}{listOfVans}</div></>
+  <div className="mb-8 mt-10 grid grid-cols-6 gap-11">{listOfVans}</div></>
     ) 
 }
 

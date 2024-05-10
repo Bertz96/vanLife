@@ -1,5 +1,6 @@
 import {
   Link,
+  LoaderFunctionArgs,
   NavLink,
   Outlet,
   useLoaderData,
@@ -9,11 +10,12 @@ import TypeBadge from "../../components/TypeBadge";
 import { getVan } from "../../utils/api";
 import { requireAuth } from "../../utils/login";
 
-
-export async function loader({ params, request } ) {
+export async function loader({ params, request } : LoaderFunctionArgs ) {
   await requireAuth(request);
-  return getVan(params.id);
+
+  return getVan(params.id as string);
 }
+
 
 export default function HostVanDetail() {
 

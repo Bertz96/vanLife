@@ -12,5 +12,13 @@ export default defineConfig({
     postcss: {
       plugins: [tailwindcss()],
     },
-  }  
+  },
+  server:{
+    open:'/',
+    proxy:{
+      '/vans': 'http://localhost:3000',
+      '/host': 'http://localhost:3000',
+      '/login': 'http://localhost:3000'
+    }
+  }
 })

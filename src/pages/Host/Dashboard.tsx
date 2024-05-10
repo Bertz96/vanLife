@@ -3,18 +3,22 @@ import { requireAuth } from '../../utils/login';
 import { getHostVans } from '../../utils/api';
 import { Suspense } from 'react';
 import { BsStarFill } from 'react-icons/bs';
-import { Van } from '../../types/vanType';
+import { Van, Loader } from '../../types/vanType';
 
+type VanLoader = {
+  listOfVans : Promise<Van[]>
+}
 
-export async function loader({request} ){
+export async function loader({ request }: Loader){
   await requireAuth(request)
   return defer({ listOfVans : getHostVans()})
 }
 
 
+
 export default function Dashboard() {
   
-  const vanData = useLoaderData()
+  const vanData  = useLoaderData() as VanLoader
   
   function renderListOfVans(vans: Van[] ){
     const listOfVans = vans.map((van) => (
@@ -67,7 +71,6 @@ export default function Dashboard() {
   
       </section>
       
-
       <section>
         <div className=' flex justify-between px-6 py-8'>
         <h2 className=' text-2xl font-bold '>Your listed vans</h2>

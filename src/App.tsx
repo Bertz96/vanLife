@@ -1,6 +1,5 @@
-import "./server";
-
 import "./App.css";
+
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -51,29 +50,30 @@ const router = createBrowserRouter(
 
         <Route path="host" element={<HostLayout />} loader={async ({request})=> requireAuth(request)} errorElement={<ErrorHost />}>
         
-                  <Route
-                    index
-                    element={<Dashboard />}
-                    loader={loaderDashboard}
-                  />
+          <Route
+            index
+            element={<Dashboard />}
+            loader={loaderDashboard}
+          />
         
-        <Route
-          path="income"
-          element={<Income />}
-          loader={async ({request}) => await requireAuth( request )}
-        />
-        <Route
-          path="reviews"
-          element={<Reviews />}
-          loader={async ({request}) => await requireAuth( request)}
-        />
+          <Route
+            path="income"
+            element={<Income />}
+            loader={async ({request}) => await requireAuth( request )}
+          />
+          <Route
+            path="reviews"
+            element={<Reviews />}
+            loader={async ({request}) => await requireAuth( request)}
+          />
+          
           <Route path="vans" loader={hostVanLoader} element={<HostVans />} />
 
-          <Route
-            path="vans/:id"
-            loader={hostVanDetailLoader}
-            element={<HostVanDetail />}
-          >
+            <Route
+              path="vans/:id"
+              loader={hostVanDetailLoader}
+              element={<HostVanDetail />}
+            >
               <Route
                 index
                 loader={async ({request}) => await requireAuth( request)}
@@ -89,7 +89,7 @@ const router = createBrowserRouter(
                 loader={async ({request}) => await requireAuth( request)}
                 element={<HostVanPhotos />}
               />
-            </Route>
+          </Route>
         </Route>
 
       <Route path="*" element={<NotFound />} />

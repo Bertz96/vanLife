@@ -1,44 +1,42 @@
 // import { requireAuth } from "../utils/login";
-import { useLoaderData, useNavigation, Form, redirect, useActionData } from "react-router-dom";
+import { useLoaderData, useNavigation, Form, redirect, useActionData, LoaderFunctionArgs, ActionFunctionArgs } from "react-router-dom";
 import { loginUser } from '../utils/api';
 
-type Loader = {
-  request: Request
-}
 
-type Action = {
-  request: Request
-}
-
-export function loader( {request} : Loader ) {
+export function loader( {request} : LoaderFunctionArgs ) {
   const mensaje = new URL(request.url).searchParams.get('message')
+
+  const loggedUser = localStorage.getItem('loggedIn')
+
+  if(loggedUser){
+    return redirect('/host')
+  }
+
+  console.log(loggedUser)
+
   return mensaje
 }
 
-export async function action({request} : Action) {
+export async function action({request} : ActionFunctionArgs) {
   const formData = await request.formData()
   
   const email = formData.get('email')
   const password = formData.get('password')
   
-  
   const prevPath = new URL(request.url).searchParams.get('redirectTo') || '/host'
-  console.log(prevPath)
     try{
         const infoLogin = await loginUser({email, password })
-        console.log(infoLogin)
+        console.log(infoLogin);
         localStorage.setItem('loggedIn', 'true')
-    } catch (err){
-        return err.message
+    
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err : any ){
+        return err.message;
     }
 
-    
-    //    the reason about this is a BUG with MirageJS
     const infoRedirect = redirect(prevPath)
-    infoRedirect.body = true
-    console.log(infoRedirect)
     return infoRedirect
-    }
+}
 
 
 export default function Login() {
