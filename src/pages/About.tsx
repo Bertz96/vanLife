@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
+import pictureAbout from '../assets/images/about.png'
 
 export default function About() {
   return (
     <div>
       <img
-        src="src\assets\images\about.png"
+        src={pictureAbout}
         alt="foto chico sobre van"
         className=" mx-auto my-5 rounded-md"
       />
