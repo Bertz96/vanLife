@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 export default function Layout() {
   return (
-    <div >
+    <div className=' m-auto w-2/3'>
       <Header />
       <main>
         <Outlet />
