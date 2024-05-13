@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { VscAccount } from "react-icons/vsc";
+import { TbLogout } from "react-icons/tb";
 
 function fakeLogOut() {
   localStorage.removeItem("loggedIn")
@@ -48,7 +49,9 @@ export default function Header() {
         </NavLink>
         
             <Link to='/'>
-              <button onClick={fakeLogOut} className=' rounded-lg  text-red-600  font-bold '>Log out</button>
+              <button onClick={fakeLogOut} className=' rounded-lg  text-red-600  font-bold '>
+                <TbLogout className=" text-2xl font-bold underline hover:text-[#161616]" />
+                </button>
             </Link>
       </nav>
     </header>

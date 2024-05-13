@@ -22,7 +22,7 @@ export default function HostVanDetail() {
   const infoVan = useLoaderData() as Van
 
   return (
-    <section className="py-2 h-screen">
+    <section className="py-2">
       <Link
         to=".."
         relative="path"

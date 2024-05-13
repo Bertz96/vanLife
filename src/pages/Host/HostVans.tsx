@@ -46,7 +46,7 @@ export default function HostVans() {
   }
 
   return (
-    <section className='h-screen'>
+    <section>
       <h1 className=" my-9 ml-7 text-4xl font-bold">Your listed vans</h1>
       <Suspense fallback={<h2>Agarrando las vans del host...</h2>}>
         <Await resolve={dataPromise.listOfVans} >
