@@ -11,10 +11,10 @@ export default function Header() {
 
   return (
     <header className=" flex items-center justify-between py-4">
-      <Link to="/" className=" text-5xl font-black uppercase">
+      <Link to="/" className=" bg-orangeButton text-white lg:text-black ml-3 lg:ml-0 py-1 lg:py-0 rounded-full lg:rounded-none lg:bg-transparent px-4 lg:pl-0 text-3xl lg:text-5xl font-black uppercase">
         #VanLife
       </Link>
-      <nav className="flex gap-7 font-medium text-[#4D4D4D]">
+      <nav className="sm:flex hidden lg:gap-7 font-medium text-[#4D4D4D]">
         <NavLink
           to="host"
           className={({ isActive }) =>
