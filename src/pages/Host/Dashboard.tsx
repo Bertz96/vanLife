@@ -25,7 +25,7 @@ export default function Dashboard() {
       <Link to={`vans/${van.id}`} key={van.id}>
         <div
           key={van.id}
-          className="mb-6 flex  gap-4 rounded-lg bg-white p-6"
+          className="mb-6 flex mx-4 lg:mx-0 gap-4 rounded-lg bg-white p-6"
         >
           <img
             src={van.imageUrl}

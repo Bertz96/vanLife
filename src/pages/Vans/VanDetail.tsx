@@ -18,7 +18,7 @@ export default function VanDetail() {
   const search = ubicacion.state?.search || "";
 
   return (
-    <section>
+    <section className='pt-2 lg:pt-0 px-5 lg:px-0'>
       <Link
         to={`..${search}`}
         relative="path"
@@ -30,7 +30,7 @@ export default function VanDetail() {
       <img
         src={van.imageUrl}
         alt="fotito de la van"
-        className=" mt-8 size-80 rounded-lg "
+        className="mt-4 lg:mt-8 mx-auto lg:mx-0 size-80 rounded-lg "
       />
       <div className=" flex flex-col gap-3 py-7">
         <TypeBadge badge={van.type}>{van.type}</TypeBadge>
@@ -41,7 +41,7 @@ export default function VanDetail() {
           /day
         </h4>
         <p>{van.description}</p>
-        <button className="  rounded-md bg-orangeButton py-2 font-bold   text-white">
+        <button className="  rounded-md bg-orangeButton mt-4 py-2 font-bold   text-white">
           Rent this van
         </button>
       </div>

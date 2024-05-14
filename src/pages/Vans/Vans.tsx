@@ -38,7 +38,7 @@ export default function Vans() {
         : vans;
 
       const listOfVans = displayedVans.map((van: Van) => (
-        <div key={van.id}>
+        <div className='bg-white lg:bg-transparent p-6 rounded-lg lg:rounded-none lg:p-0' key={van.id}>
           <Link
             to={van.id}
             state={{ type: typeFilter, search: `?${searchParams.toString()}` }}
@@ -46,27 +46,29 @@ export default function Vans() {
             <img
               src={van.imageUrl}
               alt="foto van"
-              className=" size-40 rounded-md"
+              className="size-72 lg:size-40 mx-auto rounded-md"
             />
-            <div>
-              <h3 className=" font-bold">{van.name}</h3>
-              <p className="py-2">
-                ${van.price}
-                <span>/day</span>
-              </p>
+            <div className='flex justify-between items-center mt-2 lg:flex-col lg:items-start'>
+              <div className=''>
+                <h3 className=" font-bold">{van.name}</h3>
+                <p className="py-2">
+                  ${van.price}
+                  <span>/day</span>
+                </p>
+              </div>
+              <i
+                className={`${"bg-" + van.type} py- h-8 rounded-md  px-7 py-1 not-italic text-labels`}
+                >
+                {van.type}
+              </i>
             </div>
-            <i
-              className={`${"bg-" + van.type} py- h-8 rounded-md  px-7 py-1 not-italic text-labels`}
-            >
-              {van.type}
-            </i>
           </Link>
         </div>
       ));
 
       return(
         <>
-    <nav className="mt-4 flex gap-3">
+    <nav className="mt-4 grid grid-cols-3 lg:flex gap-3">
         <button
         onClick={() => handleFilterChange("type", "simple")}
         className={`rounded-md ${typeFilter === "simple" ? "bg-simple text-white" : "bg-orange-300"} px-4 py-1 font-semibold  hover:bg-simple`}
@@ -97,14 +99,14 @@ export default function Vans() {
         </button>
     ) : null}
   </nav>
-  <div className="mb-8 mt-10 grid grid-cols-6 gap-11">{listOfVans}</div></>
+  <div className="mb-8 mt-6 lg:mt-10 grid lg:grid-cols-6 gap-6 lg:gap-11">{listOfVans}</div></>
     ) 
 }
 
 
   return (
-    <div className=' px-9 py-4'>
-      <h1 className=" text-4xl font-medium">Explore our van options</h1>
+    <div className='lg:px-0 px-4 py-4'>
+      <h1 className="text-4xl font-medium">Explore our van options</h1>
       
       <Suspense fallback={<div className=' flex justify-center'>
       <Oval width={60} color='#3B3B3B' secondaryColor='gray' strokeWidth={4}  />

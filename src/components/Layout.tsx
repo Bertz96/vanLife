@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 export default function Layout() {
   return (
-    <div className='flex flex-col min-h-screen mx-auto lg:w-2/3 '>
+    <div className='lg:flex lg:flex-col min-h-screen mx-auto lg:w-2/3 '>
       <Header />
       <main className=' lg:mb-8'>
         <Outlet />

@@ -21,14 +21,15 @@ export default function Reviews() {
 
 return (
     <section className="host-reviews">
-        <div className="flex py-4 items-center">
-            <h2 className=' text-4xl mx-6 font-bold'>Your reviews</h2>
+        <div className="flex  py-4 lg:py-8 items-center">
+        
+            <h2 className=' text-4xl mx-6 lg:mx-7 font-bold'>Your reviews</h2>
             <p className=' text-lg text-gray-600 font-semibold '>
                 Last <span className='underline'>30 days</span>
             </p>
         </div>
         <img
-            className="m-6 h-60"
+            className=" px-6 lg:px-0 mt-4 lg:mt-0 lg:m-6 lg:h-60"
             src={reviewsGraph}
             alt="Review graph"
         />

@@ -23,12 +23,12 @@ export default function HostVans() {
       <Link to={`${van.id}`} key={van.id}>
         <div
           key={van.id}
-          className="mb-6 flex  gap-4 rounded-lg bg-white p-6"
+          className="mb-6 flex mx-4 lg:mx-0  gap-4 rounded-lg bg-white p-5 lg:p-6"
         >
           <img
             src={van.imageUrl}
             alt="foteli van"
-            className="size-16   rounded-md"
+            className=" size-24 rounded-md"
           />
           <div className="flex flex-col justify-center">
             <h3 className=" font-bold">{van.name}</h3>
@@ -39,15 +39,15 @@ export default function HostVans() {
     ))
     
     return (
-      <section>
+      <section >
         {listOfVans}
       </section>
     )
   }
 
   return (
-    <section>
-      <h1 className=" my-9 ml-7 text-4xl font-bold">Your listed vans</h1>
+    <section >
+      <h1 className=" my-5 mx-6 lg:my-9 lg:ml-7 text-4xl font-bold">Your listed vans</h1>
       <Suspense fallback={<h2>Agarrando las vans del host...</h2>}>
         <Await resolve={dataPromise.listOfVans} >
           {renderHostVans}

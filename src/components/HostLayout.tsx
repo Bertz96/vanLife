@@ -6,8 +6,8 @@ import { NavLink, Outlet } from "react-router-dom";
 
 export default function HostLayout() {
   return (
-    <>
-      <nav className="my-1 flex font-medium text-[#4D4D4D] *:px-5 *:py-1 ">
+    <div className='min-h-screen'>
+      <nav className="my-1 flex font-medium text-[#4D4D4D] justify-evenly lg:justify-normal gap-2 lg:gap-0 lg:*:px-5 *:py-1 ">
         <NavLink
           to="."
           end
@@ -43,6 +43,6 @@ export default function HostLayout() {
         </NavLink>
       </nav>
       <Outlet />
-    </>
+    </div>
   );
 }
