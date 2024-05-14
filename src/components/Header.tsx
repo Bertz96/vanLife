@@ -25,8 +25,8 @@ export default function Header() {
 
 
       
-      {open &&  <div className='lg:hidden absolute top-full bg-inherit'>
-      <nav className="flex flex-col  mt-1 *:my-5 items-center w-screen lg:hidden font-medium text-[#4D4D4D]">
+      {open &&  <div className='lg:hidden absolute w-full top-full bg-inherit'>
+      <nav className="flex flex-col   mt-1 *:my-5 items-center w-screen lg:hidden font-medium text-[#4D4D4D]">
         <NavLink
           to="host"
           className={({ isActive }) =>
@@ -38,7 +38,7 @@ export default function Header() {
         <NavLink
           to="about"
           className={({ isActive }) =>
-            isActive ? " font-bold text-[#161616] underline" : "hover:underline"
+            isActive ? " font-bold text-white" : "hover:underline"
           }
         >
           About
@@ -46,7 +46,7 @@ export default function Header() {
         <NavLink
           to="vans"
           className={({ isActive }) =>
-            isActive ? " font-bold text-[#161616] underline" : "hover:underline"
+            isActive ? " font-bold text-white" : "hover:underline"
           }
         >
           Vans

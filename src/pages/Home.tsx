@@ -5,8 +5,8 @@ export default function Home() {
   //h-[80vh]
   return (
   <div className='grid h-screen lg:h-[80vh]  lg:my-1 relative'>
-    <img className='h-full lg:rounded-md brightness-50 absolute' src={backgroundImage} alt="fondo vanlife" />
-    <div className='flex col-start-1 row-start-1 gap-8 flex-col items-center justify-center z-20 '>
+    <img className='h-full lg:rounded-md -z-20 brightness-50 absolute' src={backgroundImage} alt="fondo vanlife" />
+    <div className='flex col-start-1 row-start-1 gap-8 flex-col items-center justify-center '>
         <h1 className=" text-4xl text-center lg:text-5xl font-bold  text-white">
           You got the travel plans, we got the travel vans.
         </h1>
