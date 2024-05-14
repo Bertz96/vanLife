@@ -3,7 +3,7 @@ import pictureAbout from '../assets/images/about.png'
 
 export default function About() {
   return (
-    <div>
+    <div className='min-h-full'>
       <img
         src={pictureAbout}
         alt="foto chico sobre van"
