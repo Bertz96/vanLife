@@ -20,7 +20,7 @@ export default function Reviews() {
 ]
 
 return (
-    <section className="host-reviews">
+    <section className="text-black host-reviews">
         <div className="flex  py-4 lg:py-8 items-center">
         
             <h2 className=' text-4xl mx-6 lg:mx-7 font-bold'>Your reviews</h2>

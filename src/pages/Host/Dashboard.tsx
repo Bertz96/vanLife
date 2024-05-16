@@ -45,7 +45,7 @@ export default function Dashboard() {
 
 
   return (
-    <div className='flex flex-col'>
+    <div className='text-black flex flex-col'>
       <section className='bg-[#ffead0] px-6 py-9 flex justify-between items-center'>
     
         <div className=' flex flex-col gap-2'>
