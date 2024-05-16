@@ -5,7 +5,7 @@ export default function HostVanInfo() {
   const { infoVan } = useVan();
 
   return (
-    <section className=" m-6 flex flex-col gap-2 pb-6">
+    <section className="text-black m-6 flex flex-col gap-2 pb-6">
       <h4>
         <span className=" font-bold">Name: </span>
         {infoVan?.name}
