@@ -26,19 +26,19 @@ export default function HostVanDetail() {
       <Link
         to=".."
         relative="path"
-        className="text-xl font-semibold hover:underline"
+        className="w-fit py-1 pl-4 ml-4 pr-6 bg-[#161616] text-white rounded-full flex items-center text-lg font-semibold lg:hover:underline"
       >
         ← Back to all vans
       </Link>
 
-      <div className="rounded-lg bg-white">
-        <div className=" mt-8 flex">
+      <div className="text-black rounded-lg bg-white">
+        <div className="p-5 lg:p-0 mt-4 flex flex-col lg:flex-row">
           <img
             src={infoVan.imageUrl}
             alt="foto van"
-            className=" m-6 size-52 rounded-md"
+            className=" lg:m-6 lg:size-52 rounded-md"
           />
-          <div className=" my-6 flex flex-col gap-4 py-5">
+          <div className=" lg:my-auto flex flex-col gap-2 lg:gap-4 pt-5 lg:py-5">
             <TypeBadge badge={infoVan.type}>{infoVan.type}</TypeBadge>
             <h2 className=" text-4xl font-bold">{infoVan.name}</h2>
             <p>
