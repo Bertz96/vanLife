@@ -16,9 +16,9 @@ export default defineConfig({
   server:{
     open:'/',
     proxy:{
-      '/vans': 'http://localhost:3000',
-      '/host': 'http://localhost:3000',
-      '/login': 'http://localhost:3000'
+      '/vans': 'https://backvanlife.onrender.com/',
+      '/host': 'https://backvanlife.onrender.com/',
+      '/login': 'https://backvanlife.onrender.com/'
     }
   }
 })
