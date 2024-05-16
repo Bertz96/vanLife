@@ -38,7 +38,7 @@ export default function Vans() {
         : vans;
 
       const listOfVans = displayedVans.map((van: Van) => (
-        <div className='bg-white lg:bg-transparent p-6 rounded-lg lg:rounded-none lg:p-0' key={van.id}>
+        <div className='bg-white text-black lg:bg-transparent p-6 rounded-lg lg:rounded-none lg:p-0' key={van.id}>
           <Link
             to={van.id}
             state={{ type: typeFilter, search: `?${searchParams.toString()}` }}
@@ -105,7 +105,7 @@ export default function Vans() {
 
 
   return (
-    <div className='lg:px-0 px-4 py-4'>
+    <div className='text-black lg:px-0 px-4 py-4'>
       <h1 className="text-4xl font-medium">Explore our van options</h1>
       
       <Suspense fallback={<div className=' flex justify-center'>

@@ -18,7 +18,7 @@ export default function VanDetail() {
   const search = ubicacion.state?.search || "";
 
   return (
-    <section className='pt-2 lg:pt-0 px-5 lg:px-0'>
+    <section className='text-black pt-2 lg:pt-0 px-5 lg:px-0'>
       <Link
         to={`..${search}`}
         relative="path"
