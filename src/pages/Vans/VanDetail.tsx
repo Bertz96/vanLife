@@ -22,7 +22,7 @@ export default function VanDetail() {
       <Link
         to={`..${search}`}
         relative="path"
-        className="w-fit py-1 pl-4 ml-4 pr-6 bg-[#161616] text-white rounded-full flex items-center text-lg font-semibold lg:hover:underline"
+        className="w-fit mt-2 lg:mt-0 py-1 pl-4 pr-6 bg-[#161616] text-white rounded-full flex items-center text-lg font-semibold lg:hover:underline"
       >
         ← Back to all vans
       </Link>
@@ -30,7 +30,8 @@ export default function VanDetail() {
       <img
         src={van.imageUrl}
         alt="fotito de la van"
-        className="mt-4 lg:mt-6 mx-auto lg:mx-0 size-80 rounded-lg "
+        // size-80
+        className="mt-5 lg:mt-6 mx-auto size-96 lg:mx-0  rounded-lg "
       />
       <div className=" flex flex-col gap-3 py-7">
         <TypeBadge badge={van.type}>{van.type}</TypeBadge>

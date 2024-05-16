@@ -46,7 +46,7 @@ export default function Vans() {
             <img
               src={van.imageUrl}
               alt="foto van"
-              className="size-72 lg:size-40 mx-auto rounded-md"
+              className="size-80 lg:size-40 mx-auto rounded-md"
             />
             <div className='flex justify-between items-center mt-2 lg:flex-col lg:items-start'>
               <div className=''>
