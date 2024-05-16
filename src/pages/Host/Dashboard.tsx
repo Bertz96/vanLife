@@ -76,7 +76,7 @@ export default function Dashboard() {
         <h2 className=' text-2xl font-bold '>Your listed vans</h2>
         <p>View all</p>
         </div>
-        <Suspense fallback={<h1>Cargando la data de las vans mi champ</h1>}>
+        <Suspense fallback={<h1>Loading van data...</h1>}>
           <Await resolve={vanData.listOfVans}>
             {renderListOfVans}
           </Await>
