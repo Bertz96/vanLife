@@ -13,12 +13,12 @@ export default defineConfig({
       plugins: [tailwindcss()],
     },
   },
-  server:{
-    open:'/',
-    proxy:{
-      '/vans': 'https://backvanlife.onrender.com/',
-      '/host': 'https://backvanlife.onrender.com/',
-      '/login': 'https://backvanlife.onrender.com/'
-    }
-  }
+  // server:{
+  //   open:'/',
+  //   proxy:{
+  //     '/vans': 'https://backvanlife.onrender.com/',
+  //     '/host': 'https://backvanlife.onrender.com/',
+  //     '/login': 'https://backvanlife.onrender.com/'
+  //   }
+  // }
 })
