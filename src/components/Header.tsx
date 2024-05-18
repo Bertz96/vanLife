@@ -10,7 +10,11 @@ function fakeLogOut() {
 
 export default function Header() {
 
+  const loggedUser = localStorage.getItem('loggedIn')
+
   const [open, setOpen] = useState(false)
+
+  
 
   return (
     <header className="flex bg-[#161616]  lg:bg-transparent items-center justify-between relative z-20 lg:z-0 lg:p-1 lg:py-4 lg:mx-0">
@@ -54,7 +58,11 @@ export default function Header() {
         >
           Vans
         </NavLink>
-        <NavLink
+
+
+        {
+          loggedUser ? null :
+          <NavLink
           to="login"
           onClick={()=> {setOpen(prev => !prev)}}
           className={({ isActive }) =>
@@ -63,12 +71,17 @@ export default function Header() {
         >
           Log In
         </NavLink>
+        }
 
+          {
+            loggedUser ? 
             <NavLink to='/' reloadDocument={true}>
               <button onClick={fakeLogOut} className=' rounded-lg  text-red-600  font-bold '>
                 Log Out
                 </button>
             </NavLink>
+            : null
+          }
       </nav>
 
       </div> }
