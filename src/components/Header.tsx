@@ -14,10 +14,10 @@ export default function Header() {
 
   return (
     <header className="flex bg-[#161616]  lg:bg-transparent items-center justify-between relative z-20 lg:z-0 lg:p-1 lg:py-4 lg:mx-0">
-      <Link to="/" className=" text-white lg:text-black py-3 lg:py-0 rounded-full lg:rounded-none lg:bg-transparent px-4 lg:px-0 text-3xl lg:text-5xl font-black uppercase">
+      <Link to="/" className=" text-white lg:text-black py-3 lg:py-0 lg:rounded-none lg:bg-transparent px-4 lg:px-0 text-3xl lg:text-5xl font-black uppercase">
         #VanLife
       </Link>
-      <button className='lg:hidden  mr-2 p-1 rounded-lg text-white' onClick={()=> {setOpen(prev => !prev); console.log(open ? 'abierto' : 'cerrado');}}>
+      <button className='lg:hidden  mr-2 p-1 rounded-lg text-white' onClick={()=> {setOpen(prev => !prev)}}>
         <RxHamburgerMenu className='lg:hidden text-2xl' />
       </button>
         
@@ -29,6 +29,7 @@ export default function Header() {
       <nav className="flex flex-col   mt-1 *:my-5 items-center w-screen lg:hidden font-medium text-[#4D4D4D]">
         <NavLink
           to="host"
+          onClick={()=> {setOpen(prev => !prev)}}
           className={({ isActive }) =>
             isActive ? " font-bold text-white" : "hover:underline"
           }
@@ -37,6 +38,7 @@ export default function Header() {
         </NavLink>
         <NavLink
           to="about"
+          onClick={()=> {setOpen(prev => !prev)}}
           className={({ isActive }) =>
             isActive ? " font-bold text-white" : "hover:underline"
           }
@@ -45,13 +47,28 @@ export default function Header() {
         </NavLink>
         <NavLink
           to="vans"
+          onClick={()=> {setOpen(prev => !prev)}}
           className={({ isActive }) =>
             isActive ? " font-bold text-white" : "hover:underline"
           }
         >
           Vans
         </NavLink>
-        
+        <NavLink
+          to="login"
+          onClick={()=> {setOpen(prev => !prev)}}
+          className={({ isActive }) =>
+            isActive ? " font-bold text-white" : "hover:underline"
+          }
+        >
+          Log In
+        </NavLink>
+
+            <NavLink to='/' reloadDocument={true}>
+              <button onClick={fakeLogOut} className=' rounded-lg  text-red-600  font-bold '>
+                Log Out
+                </button>
+            </NavLink>
       </nav>
 
       </div> }
@@ -92,11 +109,11 @@ export default function Header() {
           <VscAccount className=" text-2xl  font-bold underline  hover:text-[#161616]" />
         </NavLink>
 
-                    <Link to='/' reloadDocument={true}>
+            <NavLink to='/' reloadDocument={true}>
               <button onClick={fakeLogOut} className=' rounded-lg  text-red-600  font-bold '>
                 <TbLogout className=" text-2xl font-bold underline hover:text-[#161616]" />
                 </button>
-            </Link>
+            </NavLink>
       </nav>
     </header>
   );
