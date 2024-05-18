@@ -63,13 +63,13 @@ export default function Login() {
             type="email"
             name="email"
             placeholder="Email address"
-            className="h-10 w-96 bg-white self-center rounded-t-md border-2 border-b-transparent pl-4  focus:outline-gray-900"
+            className="h-10 w-96 text-black bg-white self-center rounded-t-md border-2 border-b-transparent pl-4  focus:outline-gray-900"
           />
           <input
             type="password"
             name="password"
             placeholder="Password"
-            className="h-10 w-96 bg-white self-center rounded-b-md border-2  pl-4"
+            className="h-10 w-96 text-black bg-white self-center rounded-b-md border-2  focus:outline-gray-900  pl-4"
           />
 
           <button
