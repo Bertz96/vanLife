@@ -4,6 +4,7 @@ import { getHostVans } from '../../utils/api';
 import { Suspense } from 'react';
 import { BsStarFill } from 'react-icons/bs';
 import { Van, Loader } from '../../types/vanType';
+import { Oval } from 'react-loader-spinner';
 
 type VanLoader = {
   listOfVans : Promise<Van[]>
@@ -45,6 +46,7 @@ export default function Dashboard() {
 
 
   return (
+    //CAMBIAR LA ALTURA  Y EL FONDO
     <div className='text-black flex flex-col'>
       <section className='bg-[#ffead0] px-6 py-9 flex justify-between items-center'>
     
@@ -71,12 +73,15 @@ export default function Dashboard() {
   
       </section>
       
-      <section>
+      <section >
         <div className=' flex justify-between px-6 py-8'>
         <h2 className=' text-2xl font-bold '>Your listed vans</h2>
         <p>View all</p>
         </div>
-        <Suspense fallback={<h1>Loading van data...</h1>}>
+        <Suspense fallback={
+            <div className=' flex items-center justify-center'>
+              <Oval width={60} color='#3B3B3B' secondaryColor='gray' strokeWidth={4}  />
+            </div>}>
           <Await resolve={vanData.listOfVans}>
             {renderListOfVans}
           </Await>

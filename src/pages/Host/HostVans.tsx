@@ -3,6 +3,7 @@ import { getHostVans } from "../../utils/api";
 import { requireAuth } from "../../utils/login";
 import { Suspense } from 'react';
 import { Loader, Van } from '../../types/vanType';
+import { Oval } from 'react-loader-spinner';
 
 
 export async function loader({request} : Loader) {
@@ -48,7 +49,11 @@ export default function HostVans() {
   return (
     <section >
       <h1 className="text-black my-5 mx-6 lg:my-9 lg:ml-7 text-4xl font-bold">Your listed vans</h1>
-      <Suspense fallback={<h2>Loading host's vans...</h2>}>
+      <Suspense fallback={
+          <div className=' flex justify-center'>
+            <Oval width={60} color='#3B3B3B' secondaryColor='gray' strokeWidth={4}  />
+          </div>
+        }>
         <Await resolve={dataPromise.listOfVans} >
           {renderHostVans}
         </Await>
