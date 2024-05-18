@@ -13,7 +13,6 @@ export default function Header() {
   const loggedUser = localStorage.getItem('loggedIn')
 
   const [open, setOpen] = useState(false)
-
   
 
   return (
@@ -113,7 +112,11 @@ export default function Header() {
         >
           Vans
         </NavLink>
-        <NavLink
+
+        
+        {
+          loggedUser ? null :
+          <NavLink
           to="login"
           className={({ isActive }) =>
             isActive ? " font-bold text-[#161616] underline" : "hover:underline"
@@ -121,12 +124,18 @@ export default function Header() {
         >
           <VscAccount className=" text-2xl  font-bold underline  hover:text-[#161616]" />
         </NavLink>
+        }
 
+        {
+            loggedUser ? 
             <NavLink to='/' reloadDocument={true}>
               <button onClick={fakeLogOut} className=' rounded-lg  text-red-600  font-bold '>
                 <TbLogout className=" text-2xl font-bold underline hover:text-[#161616]" />
-                </button>
+              </button>
             </NavLink>
+            : null
+        }
+
       </nav>
     </header>
   );

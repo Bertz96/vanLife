@@ -58,12 +58,13 @@ export default function Login() {
         {actionMessage && <h3 className=' text-center mt-3 font-bold text-red-600 text-2xl'>{actionMessage}</h3>}
         </>
 
+
       <Form method='post' replace className="mt-9 flex flex-col justify-center">
           <input
             type="email"
             name="email"
             placeholder="Email address"
-            className="h-10 w-96 text-black bg-white self-center rounded-t-md border-2 border-b-transparent pl-4  focus:outline-gray-900"
+            className="h-10 w-96 text-black bg-white self-center rounded-t-md border-2 lg:border-b-transparent  pl-4  focus:outline-gray-900"
           />
           <input
             type="password"
