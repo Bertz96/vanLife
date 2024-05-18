@@ -47,7 +47,7 @@ export default function Login() {
 
 
   return (
-    <div className=" flex flex-col px-40 py-64">
+    <div className=" flex flex-col  py-48 lg:px-40 lg:py-64">
 
       <h1 className=" text-center text-5xl font-bold text-black">
         Sing in to your account
@@ -58,7 +58,7 @@ export default function Login() {
         {actionMessage && <h3 className=' text-center mt-3 font-bold text-red-600 text-2xl'>{actionMessage}</h3>}
         </>
 
-      <Form method='post' replace className="mt-9 flex flex-col  justify-center">
+      <Form method='post' replace className="mt-9 flex flex-col justify-center">
           <input
             type="email"
             name="email"
