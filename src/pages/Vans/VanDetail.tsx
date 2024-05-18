@@ -27,24 +27,26 @@ export default function VanDetail() {
         ← Back to all vans
       </Link>
 
-      <img
-        src={van.imageUrl}
-        alt="fotito de la van"
-        // size-80
-        className="mt-5 lg:mt-6 mx-auto size-96 lg:mx-0  rounded-lg "
-      />
-      <div className=" flex flex-col gap-3 py-7">
-        <TypeBadge badge={van.type}>{van.type}</TypeBadge>
+      <div className="flex flex-col lg:mt-7 lg:flex-row">
+        <img
+          src={van.imageUrl}
+          alt="fotito de la van"
+          // size-80
+          className="mt-5 lg:mt-0 mx-auto size-96 lg:mx-0  rounded-lg "
+        />
+        <div className=" flex flex-col gap-3 py-7 lg:mx-8">
+          <TypeBadge badge={van.type}>{van.type}</TypeBadge>
 
-        <h2 className=" text-4xl font-bold">{van.name}</h2>
-        <h4>
-          <span className=" text-lg font-bold">${van.price}</span>
-          /day
-        </h4>
-        <p>{van.description}</p>
-        <button className="  rounded-md bg-orangeButton mt-4 py-2 font-bold   text-white">
-          Rent this van
-        </button>
+          <h2 className=" text-4xl font-bold">{van.name}</h2>
+          <h4>
+            <span className=" text-lg font-bold">${van.price}</span>
+            /day
+          </h4>
+          <p>{van.description}</p>
+          <button className="  rounded-md lg:w-60 lg:mt-auto bg-orangeButton mt-4 py-2 font-bold   text-white">
+            Rent this van
+          </button>
+        </div>
       </div>
     </section>
   );

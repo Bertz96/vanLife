@@ -108,7 +108,7 @@ export default function Vans() {
     <div className='text-black lg:px-0 px-4 py-4'>
       <h1 className="text-4xl font-medium">Explore our van options</h1>
       
-      <Suspense fallback={<div className=' flex justify-center'>
+      <Suspense fallback={<div className=' flex pt-40 justify-center'>
       <Oval width={60} color='#3B3B3B' secondaryColor='gray' strokeWidth={4}  />
       </div>}>
         <Await resolve={vansData.allVans}>

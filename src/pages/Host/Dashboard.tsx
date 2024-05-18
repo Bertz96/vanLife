@@ -79,7 +79,7 @@ export default function Dashboard() {
         <p>View all</p>
         </div>
         <Suspense fallback={
-            <div className=' flex items-center justify-center'>
+            <div className=' flex items-center pt-40 justify-center'>
               <Oval width={60} color='#3B3B3B' secondaryColor='gray' strokeWidth={4}  />
             </div>}>
           <Await resolve={vanData.listOfVans}>

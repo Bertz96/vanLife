@@ -50,7 +50,7 @@ export default function HostVans() {
     <section >
       <h1 className="text-black my-5 mx-6 lg:my-9 lg:ml-7 text-4xl font-bold">Your listed vans</h1>
       <Suspense fallback={
-          <div className=' flex justify-center'>
+          <div className=' flex pt-40 justify-center'>
             <Oval width={60} color='#3B3B3B' secondaryColor='gray' strokeWidth={4}  />
           </div>
         }>
