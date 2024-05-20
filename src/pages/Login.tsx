@@ -12,8 +12,6 @@ export function loader( {request} : LoaderFunctionArgs ) {
     return redirect('/host')
   }
 
-  // console.log(loggedUser)
-
   return mensaje
 }
 

@@ -24,9 +24,9 @@ export default function Header() {
         <RxHamburgerMenu className='lg:hidden text-2xl' />
       </button>
         
-        {/* MENU MOBILE */}
-
     
+      {/* MENU MOBILE */}
+
       
       {open &&  <div className='lg:hidden absolute w-full top-full bg-inherit'>
       <nav className="flex flex-col   mt-1 *:my-5 items-center w-screen lg:hidden font-medium text-[#4D4D4D]">
