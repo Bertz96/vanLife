@@ -102,21 +102,3 @@ function App() {
 }
 
 export default App;
-
-/**
-// -------------------------------IMPORTANT-----------------------------------
-//
-//    The DATA LAYER API is only available in ReactRouter 6.4 and beyond
-//    this will let us handle the data before we go into our route
-//    normally we jump into our  component and THEN we make a request with our useEffect
-//    this is VERY importante because we display/handle the logic of what will be rendered before
-//    the actual data is returned, so if for example we CAN'T fetch our data the page will crash
-//    is VERY important to handle the SAD PATH to avoid a bad user experience and most important
-//    to avoid crashing our app
-
-//    aria labels are important for screen readers, DO NOT FORGET THEM is recommended to add then while the app is in development
-//    otherwise it will be a very tedious task to add them one by one once the app is released/finished
-
-// ⚠⚠⚠⚠⚠⚠   LIFTING UP THE ERROR ELEMENT PROP WITH A COMPONENT THAT HANDLE THE ERROR WILL WORK FOR EVERY CHILD IN THE APP
-//        es importante para manejar los errores, puede ser en un componente especifico o mas arriba de la jerarquia
-*/

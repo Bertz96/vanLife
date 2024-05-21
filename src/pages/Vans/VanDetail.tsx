@@ -31,7 +31,6 @@ export default function VanDetail() {
         <img
           src={van.imageUrl}
           alt="fotito de la van"
-          // size-80
           className="mt-5 lg:mt-0 mx-auto size-96 lg:mx-0  rounded-lg "
         />
         <div className=" flex flex-col gap-3 py-7 lg:mx-8">
