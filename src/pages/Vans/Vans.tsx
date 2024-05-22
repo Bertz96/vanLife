@@ -38,7 +38,7 @@ export default function Vans() {
         : vans;
 
       const listOfVans = displayedVans.map((van: Van) => (
-        <div className='bg-white text-black lg:bg-transparent p-6 rounded-lg lg:rounded-none lg:p-0' key={van.id}>
+        <div className='bg-white mx-auto mb-6 text-black lg:bg-transparent p-6 rounded-lg lg:rounded-none lg:p-0' key={van.id}>
           <Link
             to={van.id}
             state={{ type: typeFilter, search: `?${searchParams.toString()}` }}
@@ -46,7 +46,7 @@ export default function Vans() {
             <img
               src={van.imageUrl}
               alt="foto van"
-              className="size-80 lg:size-40 mx-auto rounded-md"
+              className="size-80 lg:size-40 mx-auto lg:mx-0 rounded-md"
             />
             <div className='flex justify-between items-center mt-2 lg:flex-col lg:items-start'>
               <div className=''>
@@ -99,13 +99,13 @@ export default function Vans() {
         </button>
     ) : null}
   </nav>
-  <div className="mb-8 mt-6 lg:mt-10 grid lg:grid-cols-6 gap-6 lg:gap-11">{listOfVans}</div></>
+  <div className="mb-8 mt-6 lg:mt-10 grid lg:grid-cols-4 lg:gap-11 xl:grid-cols-6">{listOfVans}</div></>
     ) 
 }
 
 
   return (
-    <div className='text-black lg:px-0 px-4 py-4'>
+    <div className='text-black px-4 py-4'>
       <h1 className="text-4xl font-medium">Explore our van options</h1>
       
       <Suspense fallback={<div className=' flex pt-40 justify-center'>
