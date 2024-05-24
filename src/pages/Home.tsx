@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import backgroundImage from '../assets/images/homeBg.png'
 
 export default function Home() {
-  //h-[80vh]
+
   return (
   <div className='grid h-screen lg:h-[80vh]  lg:my-1 relative'>
     <img className='h-full lg:rounded-md -z-20 brightness-50 absolute' src={backgroundImage} alt="fondo vanlife" />
